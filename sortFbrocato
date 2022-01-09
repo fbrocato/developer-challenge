@@ -1,0 +1,63 @@
+  //Ciao Andrea, ecco la mia propostaper il contest
+  //=============================================================
+        //	Francesco Brocato
+        //=============================================================
+
+		public static int[] sortFrancescoBrocato(int[] v, int rif) {
+			
+		//algoritmo di ordinamento counting sort più efficiente Array.sort() nel contesto specifico
+			int n = v.Length;
+	  		int max = 0;
+			for (int i=0; i<n; i++) {  
+				if(max < v[i]) {
+				   max = v[i];
+				} 
+			}
+		    int[] freq = new int[max+1];
+		    for (int i=0; i<max+1; i++) {  
+			freq[i] = 0;
+		    } 
+		    for (int i=0; i<n; i++) {  
+			 freq[v[i]]++;
+		    }
+		    for (int i=0, y=0; i<=max; i++) {  
+			  while(freq[i]>0) { 
+			    v[y] = i;
+			    y++;
+			    freq[i]--;
+		     }
+		    }
+	 	//fine counting sort
+	 		
+			//Array.Sort(v); 
+			//int min=v[0];
+			//int max=v[v.Length-1];
+			int[] rv=new int[v.Length];
+			int h=0;
+			int j=0;
+			int k=v.Length-1;    	
+			
+			if (rif<=v[0]) {
+				return v;
+			}
+			if (rif>=max) {
+				for (int i=0;i<=v.Length/2; i++){	
+					rv[i]=v[v.Length-(i+1)];
+					rv[v.Length-(i+1)]=v[i];
+				}
+				return rv;    		
+			}
+			
+			while (h<k) {
+				if(-1*(v[h]-rif)>=v[k]-rif){
+					rv[rv.Length-1-j]=v[h];
+					h++;
+				} else {
+					rv[rv.Length-1-j]=v[k];
+					k--;
+				}
+				j++;
+			};    	
+		 
+			return rv;
+		}		
