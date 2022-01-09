@@ -1,11 +1,11 @@
-  //Ciao Andrea, ecco la mia propostaper il contest
+  //Ciao Andrea, ecco la mia proposta per il contest
   //=============================================================
         //	Francesco Brocato
         //=============================================================
 
 		public static int[] sortFrancescoBrocato(int[] v, int rif) {
 			
-		//algoritmo di ordinamento counting sort più efficiente Array.sort() nel contesto specifico
+		//algoritmo di ordinamento counting sort più efficiente di Array.sort() nel contesto specifico
 			int n = v.Length;
 	  		int max = 0;
 			for (int i=0; i<n; i++) {  
